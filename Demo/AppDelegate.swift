@@ -20,9 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AOObserver.share.durationLimit = 1.0/50.0
         AOObserver.share.observeInterval = 0.01
         AOObserver.share.callBack = { duration in
-            print("duration \(duration)")
+            if let str = AOCallStackTrace.allCallStackTrace() {
+                print(str)
+            }
         }
         AOObserver.share.startObserve()
+        
         return true
     }
 

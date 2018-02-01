@@ -15,5 +15,4 @@ FOUNDATION_EXPORT double AppObserverVersionNumber;
 FOUNDATION_EXPORT const unsigned char AppObserverVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AppObserver/PublicHeader.h>
-
-
+#import "AOCallStackTrace.h"

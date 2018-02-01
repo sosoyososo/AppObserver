@@ -18,6 +18,9 @@
 		4708731C2022C66B00B2CFCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4708731A2022C66B00B2CFCB /* LaunchScreen.storyboard */; };
 		470873272022C66B00B2CFCB /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470873262022C66B00B2CFCB /* DemoTests.swift */; };
 		470873322022C66B00B2CFCB /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470873312022C66B00B2CFCB /* DemoUITests.swift */; };
+		4730CAB52022F3F600F7258E /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4730CAB42022F3F600F7258E /* CrashReporter.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		47AB05D02022F84B003F6835 /* AOCallStackTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 47AB05CE2022F84B003F6835 /* AOCallStackTrace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47AB05D12022F84B003F6835 /* AOCallStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 47AB05CF2022F84B003F6835 /* AOCallStackTrace.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		4708732D2022C66B00B2CFCB /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		470873312022C66B00B2CFCB /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
 		470873332022C66B00B2CFCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4730CAB42022F3F600F7258E /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporter.framework; path = AppObserver/CrashReporter.framework; sourceTree = "<group>"; };
+		47AB05CE2022F84B003F6835 /* AOCallStackTrace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AOCallStackTrace.h; sourceTree = "<group>"; };
+		47AB05CF2022F84B003F6835 /* AOCallStackTrace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AOCallStackTrace.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4730CAB52022F3F600F7258E /* CrashReporter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +124,7 @@
 		470872E32022B12400B2CFCB = {
 			isa = PBXGroup;
 			children = (
+				4730CAB42022F3F600F7258E /* CrashReporter.framework */,
 				470872EF2022B12400B2CFCB /* AppObserver */,
 				470872FA2022B12400B2CFCB /* AppObserverTests */,
 				470873102022C66B00B2CFCB /* Demo */,
@@ -200,6 +208,8 @@
 		4730CAA82022EC3B00F7258E /* CallBackTrace */ = {
 			isa = PBXGroup;
 			children = (
+				47AB05CE2022F84B003F6835 /* AOCallStackTrace.h */,
+				47AB05CF2022F84B003F6835 /* AOCallStackTrace.m */,
 			);
 			path = CallBackTrace;
 			sourceTree = "<group>";
@@ -212,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				470872FE2022B12400B2CFCB /* AppObserver.h in Headers */,
+				47AB05D02022F84B003F6835 /* AOCallStackTrace.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47AB05D12022F84B003F6835 /* AOCallStackTrace.m in Sources */,
 				470873082022B13E00B2CFCB /* AOFPSStopObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,6 +628,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppObserver",
+				);
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = AppObserver/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -638,6 +656,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppObserver",
+				);
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = AppObserver/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
